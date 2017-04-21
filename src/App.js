@@ -1,21 +1,16 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+
+import Header from './components/header'
 
 class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
-        </div>
-        <p className="App-intro">
-         Wow, this work properly XD
-        </p>
-      </div>
-    );
-  }
-}
+    render() {
+        return (
+            <div>
+                <h1>Hello from React</h1>
+                <Header />
+            </div>
+        );
+    }
+};
 
 export default App;

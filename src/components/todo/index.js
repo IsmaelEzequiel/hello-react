@@ -12,14 +12,21 @@ class Todo extends Component {
                 {id: 3, name:'todo three', isComplete: false},
             ],
             currentTodo: ''
-        }
+        };
+        this.handlerInputChange = this.handlerInputChange.bind(this);
+    }
+
+    handlerInputChange(event) {
+        this.setState({
+            currentTodo: event.target.value
+        });
     }
 
     render() {
         return (
             <div className="Todo-app">
                 <form action="#" className="Form-input">
-                    <input type="text" placeholder="Hey, what do you wanna to add?" value={ this.state.currentTodo }/>
+                    <input type="text" onChange={this.handlerInputChange} value={ this.state.currentTodo }/>
                 </form>
                 <ul className="List-todo">
                     { this.state.todos.map(todo => 

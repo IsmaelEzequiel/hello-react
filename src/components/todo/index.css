@@ -1,0 +1,15 @@
+.Todo-app {
+    padding-top: 50px;
+    margin: auto;
+    text-align: left;
+    width: 400px;
+}
+
+.Form-input input[type="text"] {
+    width: 400px;
+}
+
+.List-todo {
+    list-style: none;
+    padding: 0;
+}

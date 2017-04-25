@@ -1,0 +1,13 @@
+h1 {
+    margin: 0;
+    padding: 50px;
+    color: #FFF;
+    text-transform: uppercase;
+}
+
+.App-header {
+    background-color: #0072BB;
+    border-bottom: 10px solid #41b3fc;
+    text-align: center;
+    width: 100%;
+}

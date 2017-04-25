@@ -11,6 +11,8 @@ class Todo extends Component {
                 </form>
                 <ul className="List-todo">
                     <li><input type="checkbox"/>Hello</li>
+                    <li><input type="checkbox"/>Hello</li>
+                    <li><input type="checkbox"/>Hello</li>
                     <li><input type="checkbox"/>Heasdasdasllo</li>
                 </ul>      
             </div>

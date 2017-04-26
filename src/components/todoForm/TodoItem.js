@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 
 export const TodoItem = (props) => {
   return (
@@ -7,3 +7,9 @@ export const TodoItem = (props) => {
     </li>
   );
 };
+
+TodoItem.propTypes = {
+  id: PropTypes.number.isRequired,
+  defaultChecked: PropTypes.bool,
+  name: PropTypes.string.isRequired 
+}

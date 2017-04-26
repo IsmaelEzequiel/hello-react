@@ -1,16 +1,19 @@
 import React from 'react';
 
-export const TodoList = (props) => (
-  <div>
-    <ul className="Todo-list">
-      { props.todos.map( todo =>
-        <li key={ todo.id }>
-          <input type="checkbox" defaultChecked={ todo.isComplete }/>{ todo.name }
-        </li>
-      )}
-    </ul>
-  </div>
-);
+import { TodoItem } from './TodoItem';
+
+export const TodoList = (props) => {
+  return (
+    <div>
+      <ul className="Todo-list">
+        { props.todos.map( todo => 
+          // Or <TodoItem key={ todo.id } defaultChecked={ todo.isComplete } name={ todo.name }>
+          < TodoItem key={ todo.id } { ...todo } />
+         )}
+      </ul>
+    </div>
+  );
+};
 
 
 

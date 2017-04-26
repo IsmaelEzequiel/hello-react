@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import { TodoForm, TodoList } from '../todoForm';
+
 import './index.css';
 
 class Todo extends Component {
@@ -25,16 +27,16 @@ class Todo extends Component {
     render() {
         return (
             <div className="Todo-app">
-                <form action="#" className="Form-input">
-                    <input type="text" onChange={ this.handleChangeInput } value={ this.state.currentTodo }/>
-                </form>
-                <ul className="List-todo">
-                    { this.state.todos.map(todo => 
-                        <li key={todo.id}>
-                            <input type="checkbox" defaultChecked={ todo.isComplete } />{ todo.name }
-                        </li>)
-                    }
-                </ul>      
+
+                < TodoForm
+                    handleChangeInput={this.handleChangeInput}
+                    currentTodo={this.state.currentTodo}
+                 />
+
+                < TodoList
+                    todos={this.state.todos}
+                />
+
             </div>
         );
     }

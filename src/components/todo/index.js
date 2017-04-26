@@ -13,20 +13,20 @@ class Todo extends Component {
             ],
             currentTodo: ''
         };
-        this.handlerInputChange = this.handlerInputChange.bind(this);
+        this.handleChangeInput = this.handleChangeInput.bind(this);
     }
-
-    handlerInputChange(event) {
+    
+    handleChangeInput (event) {
         this.setState({
             currentTodo: event.target.value
-        });
+        })
     }
 
     render() {
         return (
             <div className="Todo-app">
                 <form action="#" className="Form-input">
-                    <input type="text" onChange={this.handlerInputChange} value={ this.state.currentTodo }/>
+                    <input type="text" onChange={ this.handleChangeInput } value={ this.state.currentTodo }/>
                 </form>
                 <ul className="List-todo">
                     { this.state.todos.map(todo => 
@@ -41,3 +41,4 @@ class Todo extends Component {
 };
 
 export default Todo;
+

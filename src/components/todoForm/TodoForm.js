@@ -3,7 +3,7 @@ import React, { PropTypes } from 'react';
 export const TodoForm = (props) => {
   return (
     <div>
-      <form action="#" className="Form-input">
+      <form onSubmit={props.handlerSubmit} className="Form-input">
         <input type="text"
           onChange={ props.handleChangeInput }
           value={ props.currentTodo }/>
@@ -14,5 +14,6 @@ export const TodoForm = (props) => {
 
 TodoForm.propTypes = {
   currentTodo: PropTypes.string.isRequired,
-  handleChangeInput: PropTypes.func
+  handleChangeInput: PropTypes.func.isRequired,
+  handlerSubmit: PropTypes.func.isRequired
 }

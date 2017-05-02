@@ -1,0 +1,17 @@
+/* istanbul ignore next */'use strict';var /* istanbul ignore next */_todoHelpers = require('./todoHelpers');
+
+test('addTodo should add the passed todo to the list', function () {
+  var startTodos = [
+  { id: 1, name: 'todo one', isComplete: false },
+  { id: 2, name: 'todo two', isComplete: true }];
+
+  var newTodo = { id: 3, name: 'todo three', isComplete: false };
+  var expectedTodo = [
+  { id: 1, name: 'todo one', isComplete: false },
+  { id: 2, name: 'todo one', isComplete: false },
+  { id: 3, name: 'todo one', isComplete: false }];
+
+
+  var result = /* istanbul ignore next */(0, _todoHelpers.addTodo)(startTodos, newTodo);
+
+});

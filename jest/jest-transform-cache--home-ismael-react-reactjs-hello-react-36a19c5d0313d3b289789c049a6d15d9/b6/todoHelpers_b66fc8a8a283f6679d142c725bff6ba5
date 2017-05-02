@@ -1,0 +1,1 @@
+/* istanbul ignore next */"use strict";Object.defineProperty(exports, "__esModule", { value: true });var addTodo = /* istanbul ignore next */exports.addTodo = function addTodo(list, item) /* istanbul ignore next */{return list.concat(item);};

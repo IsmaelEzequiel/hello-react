@@ -5,7 +5,7 @@ import { TodoItem } from './TodoItem';
 export const TodoList = (props) => {
   return (
     <div>
-      <ul className="Todo-list">
+      <ul className="List-todo">
         { props.todos.map( todo => 
           // Or <TodoItem key={ todo.id } defaultChecked={ todo.isComplete } name={ todo.name }>
           < TodoItem key={ todo.id } { ...todo } />

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
 import { TodoForm, TodoList } from '../todoForm';
+import { addTodo, generateId } from '../../lib/todoHelpers';
 
 import './index.css';
 
@@ -10,15 +11,25 @@ class Todo extends Component {
         this.state = {
             todos: [
                 {id: 1, name:'Todo one', isComplete: true},
-                {id: 2, name:'todo two', isComplete: false},
-                {id: 3, name:'todo three', isComplete: false},
             ],
             currentTodo: ''
         };
-        this.handleChangeInput = this.handleChangeInput.bind(this);
+        this.handleChangeInput = this.handleChangeInput.bind(this)
+        this.handlerSubmit = this.handlerSubmit.bind(this)
     }
     
-    handleChangeInput (event) {
+    handlerSubmit(event) {
+        event.preventDefault();
+        const newId = generateId();
+        const newTodo = {id: newId, name: this.state.currentTodo, isComplete: false};
+        const updatedTodo = addTodo(this.state.todos, newTodo);
+        this.setState({
+            todos: updatedTodo,
+            currentTodo: ''
+        });
+    }
+
+    handleChangeInput(event) {
         this.setState({
             currentTodo: event.target.value
         })
@@ -29,12 +40,13 @@ class Todo extends Component {
             <div className="Todo-app">
 
                 < TodoForm
-                    handleChangeInput={this.handleChangeInput}
-                    currentTodo={this.state.currentTodo}
+                    handleChangeInput={ this.handleChangeInput }
+                    currentTodo={ this.state.currentTodo }
+                    handlerSubmit={ this.handlerSubmit }
                  />
 
                 < TodoList
-                    todos={this.state.todos}
+                    todos={ this.state.todos }
                 />
 
             </div>

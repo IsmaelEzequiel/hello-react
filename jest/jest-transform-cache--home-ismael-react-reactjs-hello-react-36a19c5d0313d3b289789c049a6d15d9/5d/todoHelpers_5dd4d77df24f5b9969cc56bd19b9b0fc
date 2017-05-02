@@ -1,0 +1,5 @@
+/* istanbul ignore next */"use strict";Object.defineProperty(exports, "__esModule", { value: true });function _toConsumableArray(arr) {if (Array.isArray(arr)) {for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) {arr2[i] = arr[i];}return arr2;} else {return Array.from(arr);}} // list.concat(item)
+// ... is new in js (ES6), to pass list or multiple datas to an array or smething like that...
+var addTodo = /* istanbul ignore next */exports.addTodo = function addTodo(list, item) /* istanbul ignore next */{return [].concat(_toConsumableArray(list), [item]);};
+
+var generateRandomId = /* istanbul ignore next */exports.generateRandomId = function generateRandomId() /* istanbul ignore next */{return Math.floor(Math.random() * 100000);};
